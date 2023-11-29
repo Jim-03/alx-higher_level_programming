@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def remove_char_at(s, n):
     if 0 <= n < len(s):
         character = list(s)
