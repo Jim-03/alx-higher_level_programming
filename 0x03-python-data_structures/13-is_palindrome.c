@@ -24,7 +24,7 @@ int is_palindrome(listint_t **head)
 	{
 		temp = *head;
 		idx = 0;
-		while (temp && idx < length - i)
+		while (temp && idx < length - i - 1)
 		{
 			temp = temp->next;
 			idx++;
