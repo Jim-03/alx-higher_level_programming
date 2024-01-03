@@ -1,0 +1,40 @@
+The ''3-say_my_name'' Module
+
+importation of the module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test 1 (valid arguments):
+
+>>> say_my_name('John', 'Doe')
+My name is John Doe
+
+Test 2 (empty strings):
+
+>>> say_my_name('', '')
+My name is  
+
+Test 3 (first invalid argument): 
+
+>>> say_my_name(12, 'Doe')
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Test 4 (last invalid argument):
+
+>>> say_my_name('John', 12)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+Test 5 (both invalid arguments):
+
+>>> say_my_name(13, 15)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Test 6 (only one argument):
+
+>>> say_my_name('John')
+My name is John 
