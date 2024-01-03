@@ -1,0 +1,62 @@
+"""
+The ''0-add_integer''
+_____________________
+
+importation of the function:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test 1 (first non-integer argument):
+
+>>> add_integer('run', 2)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Test 2 (valid arguments):
+
+>>> add_integer(5, 9)
+14
+
+Test 3 (second non-integer argument):
+
+>>> add_integer(5, 'r')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Test 4 (first is a float):
+
+>>> add_integer (21.35, 7)
+28
+
+Test 5 (second is a float):
+
+>>> add_integer(3, 9.9)
+12
+
+Test 6 (only one value is passed):
+
+>>> add_integer(9)
+107
+
+Test 7 (negative float values):
+
+>>> add_integer(-7.6, -10.1)
+-17
+
+Test 8 (second isn't integer/float):
+
+>>> add_integer(12, 'mom')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Test 9 (both are invalid):
+
+>>> add_integer('mom', 'dad')
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+"""
