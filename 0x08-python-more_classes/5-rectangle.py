@@ -43,11 +43,11 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """The area of the rectangle."""
+        """The area of the rectangle"""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """The perimeter of the rectangle."""
+        """The perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
@@ -67,3 +67,13 @@ class Rectangle:
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
+
+    def __repr__(self):
+        """Return the representation of the Rectangle."""
+        rect = "Rectangle(" + str(self.__width)
+        rect += ", " + str(self.__height) + ")"
+        return (rect)
+
+    def __del__(self):
+        """Print a farewell message when the instance is deleted."""
+        print("Bye rectangle...")
