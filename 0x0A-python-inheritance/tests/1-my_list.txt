@@ -1,0 +1,68 @@
+The 1-my_list module
+
+IMportation of the module
+
+>>> MyList = __import__('1-my_list').MyList
+
+Test 1 (normal case):
+
+>>> myList = MyList()
+>>> myList.append(1)
+>>> myList.append(3)
+>>> myList.append(100)
+>>> myList.append(99)
+>>> print(myList)
+[1, 3, 100, 99]
+>>> myList.print_sorted()
+[1, 3, 99, 100]
+
+Test 2 (negative integers):
+
+>>> myList = MyList()
+>>> myList.append(-1)
+>>> myList.append(-3)
+>>> myList.append(-100)
+>>> myList.append(-99)
+>>> print(myList)
+[-1, -3, -100, -99]
+>>> myList.print_sorted()
+[-100, -99, -3, -1]
+
+Test 3 (empty list):
+
+>>> emptyList = []
+>>> myList = MyList(emptyList)
+>>> myList.print_sorted()
+[]
+
+Test 4 (one element):
+
+>>> oneList = [1]
+>>> my_list = MyList(oneList)
+>>> my_list.print_sorted()
+[1]
+
+Test 5 (unknown object):
+
+>>> my_list = __import__('1-my_list').MyList
+>>> try:
+...	unknownList.print_sorted()
+... except NameError as e:
+...	str(e)
+"name 'unknownList' is not defined"
+
+Test 6 (passing a list):
+
+>>> myList = MyList([0, 3, 2, 1])
+>>> myList.print_sorted()
+[0, 1, 2, 3]
+
+Test 7 (same elements):
+
+>>> myList = MyList()
+>>> myList.append(2)
+>>> myList.append(2)
+>>> myList.append(100)
+>>> myList.append(99)
+>>> myList.print_sorted()
+[2, 2, 99, 100]
