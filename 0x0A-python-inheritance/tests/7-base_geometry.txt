@@ -1,0 +1,16 @@
+The module of 7-base_geometry
+
+Importation of the module
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test 1 (normal):
+
+>>> BaseGeometry.integer_validator("int", 10)
+
+Test 2 (invalid argument):
+
+>>> BaseGeometry.integer_validator("score", "jim")
+[TypeError] score must be an integer
+
+
