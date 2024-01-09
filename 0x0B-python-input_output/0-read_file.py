@@ -4,9 +4,10 @@
 
 def read_file(filename=""):
     """Reads a text file.
+
     Args:
         filename (str): the name of the file
     """
     with open(filename, 'r', encoding="utf-8") as file:
         openFile = file.read()
-        print(openFile)
+        print(openFile, end='')
