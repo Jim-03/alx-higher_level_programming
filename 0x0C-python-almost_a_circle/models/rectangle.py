@@ -65,6 +65,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        """prints out the rectangle using #."""
         for _ in range(self.y):
             print()
         for _ in range(self.height):
@@ -74,9 +75,13 @@ class Rectangle(Base):
         return "[Rectangle) ({}) {}/{} - {}/{}".\
                 format(self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute."""
         if args:
             attr = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attr[i], arg)
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
