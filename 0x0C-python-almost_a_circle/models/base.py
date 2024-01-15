@@ -68,3 +68,34 @@ class Base:
                 return list_instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes in csv."""
+        with open(cls.__name__ + '.csv', 'w', newline = '') as file:
+            fsave = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    fsave.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    fsave.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes the csv."""
+        try:
+            with open(cls.__name__ + '.csv', 'r', newline='') as file:
+                fload = csv.reader(file)
+                list_instances = []
+                for row in fload:
+                    if cls.__name__ == "Rectangle" and len(row) == 5:
+                        dict_data = {'id': int(row[0]), 'width': int(row[1]), 'height': int(row[2]),
+                                     'x': int(row[3]), 'y': int(row[4])}
+                        list_instances.append(cls.create(**dict_data))
+                    elif cls.__name__ == "Square" and len(row) == 4:
+                        dict_data = {'id': int(row[0]), 'size': int(row[1]), 'x': int(row[2]),\
+                                'y': int(row[3])}
+                        list_instances.append(cls.create(**dict_data))
+                return list_instances
+        except FileNotFoundError:
+            return []
