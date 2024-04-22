@@ -1,9 +1,9 @@
 #!/usr/bin/node
-function fact(x) {
+function fact (x) {
   if (x <= 1) {
     return 1;
   }
-  let result = x;
+  const result = x;
   return result * fact(x - 1);
 }
 
