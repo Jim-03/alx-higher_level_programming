@@ -18,7 +18,8 @@ if __name__ == "__main__":
             )
 
     my_cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(state_name)
+    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY
+    id ASC".format(state_name)
     my_cursor.execute(query)
     results = my_cursor.fetchall()
 
