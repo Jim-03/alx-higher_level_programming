@@ -13,7 +13,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
     name = sys.argv[4]
 
-    details = (f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}"
+    details = (
+        f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}"
             )
 
     engine = create_engine(details, pool_pre_ping=True)
