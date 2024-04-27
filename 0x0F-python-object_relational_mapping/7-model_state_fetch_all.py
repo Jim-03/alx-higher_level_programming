@@ -11,10 +11,14 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine(
-        f"mysql+mysqldb://{username}:{urllib.parse.quote_plus(password)}@localhost:3306/{database}",
-        pool_pre_ping=True
-    )
+    details = (
+            "mysql+mysqldb://{username}:{password}@"
+            "localhost:3306/{database}"
+            ).format(username=username,
+                     password=urllib.parse.quote_plus(password),
+                     database=database
+                     )
+    engine = create_engine(details, pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()

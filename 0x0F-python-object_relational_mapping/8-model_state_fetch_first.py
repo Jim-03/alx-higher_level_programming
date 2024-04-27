@@ -10,10 +10,16 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
-    database = sys.argv[3]
+    database = sys.argv[3].strip('.')
 
-    details = f"mysql+mysqldb://{username}:\
-            {urllib.parse.quote_plus(password)}@localhost:3306/{database}"
+    details = (
+        "mysql+mysqldb://{username}:{password}"
+        "@localhost:3306/{database}"
+    ).format(
+        username=username,
+        password=urllib.parse.quote_plus(password),
+        database=database
+    )
     engine = create_engine(details, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
