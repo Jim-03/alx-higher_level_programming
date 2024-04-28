@@ -21,7 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).order_by(State.id.asc()).all()
-    
+
     for state in states:
         for city in state.cities:
             print(f"{city.id}: {city.name} -> {state.name}")
