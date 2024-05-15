@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # Parameter contains url from command line
     req = urllib.request.Request(sys.argv[1])
     # Connect and disconnect after making a request
-    with urllib.request.openurl(req) as response:
+    with urllib.request.urlopen(req) as response:
         # Read the body
         result = response.read()
     print(result.decode('utf-8'))
