@@ -4,7 +4,6 @@ sends a post request to a url
 displays the json data.
 """
 import requests
-import requests.exceptions
 import sys
 
 
