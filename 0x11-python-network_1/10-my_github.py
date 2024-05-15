@@ -12,4 +12,4 @@ if __name__ == "__main__":
             headers={"Authorization": f"token {sys.argv[2]}"}
             )
 
-    print(r.json()["id"])
+    print(r.json().get("id"))
