@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import sys
 import urllib.request
-""" Module takes in a url, sends arequest and displays data from the header."""
+"""
+Module takes in a url, sends arequest and displays data from the header.
+"""
 
 
 url = sys.argv[1]  # The url argument
