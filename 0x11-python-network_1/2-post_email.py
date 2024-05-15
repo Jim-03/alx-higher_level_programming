@@ -17,7 +17,7 @@ if __name__ == "__main__":
     data = data.encode('ascii')  # Data in bytes
     # Handle a request
     # Parameter contains url from command line
-    req = urllib.request.Request(sys.argv[1])
+    req = urllib.request.Request(sys.argv[1], data=data, method='POST')
     # Connect and disconnect after making a request
     with urllib.request.urlopen(req) as response:
         # Read the body
